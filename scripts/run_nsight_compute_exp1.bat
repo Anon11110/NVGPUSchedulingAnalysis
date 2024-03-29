@@ -6,7 +6,7 @@ set APP_EXE="./Experiment1.exe"
 set METRICS=sm_efficiency,achieved_occupancy
 set SECTIONS=MemoryWorkloadAnalysis
 set LAUNCH_SKIP=2
-set LAUNCH_COUNT=50
+set LAUNCH_COUNT=10
 
 if not exist %APP_EXE% (
     echo Application executable not found: %APP_EXE%

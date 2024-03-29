@@ -1,11 +1,11 @@
-#include "../include/Kernels.cuh"
+#include "../include/KernelsExp1.cuh"
 
 // Kernel 1: Performs trigonometric operations on a float value.
 __global__ void kernel1()
 {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     float value = static_cast<float>(idx) * 1.5f;
-    for (int i = 0; i < 1e3; i++) {
+    for (int i = 0; i < 1e4; i++) {
         value = sin(value) * cos(value);
     }
 }
@@ -15,7 +15,7 @@ __global__ void kernel2()
 {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     double value = static_cast<double>(idx) * 2.5;
-    for (int i = 0; i < 8e2; i++) {
+    for (int i = 0; i < 8e3; i++) {
         value = log(value) * exp(value);
     }
 }
@@ -25,7 +25,7 @@ __global__ void kernel3()
 {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     double value = static_cast<double>(idx) * 3.5;
-    for (int i = 0; i < 1.2e3; i++) {
+    for (int i = 0; i < 1.2e4; i++) {
         value = sqrt(value) * pow(value, 2.0);
     }
 }
@@ -37,7 +37,7 @@ __global__ void kernel4()
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     sharedMem[threadIdx.x] = static_cast<float>(idx) * 4.5f;
     __syncthreads();
-    for (int i = 0; i < 6e2; i++) {
+    for (int i = 0; i < 6e3; i++) {
         sharedMem[threadIdx.x] = sin(sharedMem[threadIdx.x]) * cos(sharedMem[threadIdx.x]);
     }
 }
@@ -49,7 +49,7 @@ __global__ void kernel5()
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     sharedMem[threadIdx.x] = static_cast<double>(idx) * 5.5;
     __syncthreads();
-    for (int i = 0; i < 4e2; i++) {
+    for (int i = 0; i < 4e3; i++) {
         sharedMem[threadIdx.x] = log(sharedMem[threadIdx.x]) * exp(sharedMem[threadIdx.x]);
     }
 }
@@ -59,7 +59,7 @@ __global__ void kernel6()
 {
     int idx = blockIdx.x * blockDim.x + threadIdx.x;
     float value = static_cast<float>(idx) * 6.5f;
-    for (int i = 0; i < 9e2; i++) {
+    for (int i = 0; i < 9e3; i++) {
         value = sqrt(value) * pow(value, 3.0f);
     }
 }

@@ -11,16 +11,32 @@
 // Manages CUDA streams and kernel execution.
 class StreamManager {
 public:
+    enum class Priority {
+        High,
+        Low
+    };
+
     // Constructs a StreamManager object and creates a CUDA stream.
-    StreamManager()
+    StreamManager(bool use_null_stream = false, Priority priority = Priority::Low)
     {
-        cudaStreamCreate(&stream_);
+        if (!use_null_stream) {
+            int least_priority, greatest_priority;
+            cudaDeviceGetStreamPriorityRange(&least_priority, &greatest_priority);
+
+            int cuda_priority = (priority == Priority::High) ? least_priority : greatest_priority;
+
+            cudaStreamCreateWithPriority(&stream_, cudaStreamDefault, cuda_priority);
+        } else {
+            stream_ = nullptr;
+        }
     }
 
     // Destroys the StreamManager object and the associated CUDA stream.
     ~StreamManager()
     {
-        cudaStreamDestroy(stream_);
+        if (stream_ != nullptr) {
+            cudaStreamDestroy(stream_);
+        }
     }
 
     // Adds a new kernel to the stream manager.
@@ -94,7 +110,11 @@ public:
     // Synchronizes the CUDA stream, blocking until all operations are complete.
     void Synchronize()
     {
-        cudaStreamSynchronize(stream_);
+        if (stream_ == nullptr) {
+            cudaDeviceSynchronize();
+        } else {
+            cudaStreamSynchronize(stream_);
+        }
     }
 
 private:

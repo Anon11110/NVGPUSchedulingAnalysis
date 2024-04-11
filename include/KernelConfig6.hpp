@@ -22,15 +22,21 @@ public:
     {
         int sm_count = prop.multiProcessorCount;
         int max_thread_per_sm = prop.maxThreadsPerMultiProcessor;
-        size_t shared_mem_size_per_block = prop.sharedMemPerBlock;
 
         // Calculate grid size for kernel1
-        grid_size1 = sm_count * max_thread_per_sm / block_size1.x;
-        data_size1 = 5 * shared_mem_size_per_block / 6;
+        grid_size1 = CalculateGridSize(0.25, sm_count, max_thread_per_sm, block_size1.x);
 
         // Calculate grid size for kernel2
-        grid_size2 = sm_count * max_thread_per_sm / block_size2.x;
-        data_size2 = 5 * shared_mem_size_per_block / 6;
+        grid_size2 = CalculateGridSize(0.25, sm_count, max_thread_per_sm, block_size2.x);
+
+        // Calculate grid size for kernel3
+        grid_size3 = CalculateGridSize(0.25, sm_count, max_thread_per_sm, block_size3.x);
+
+        // Calculate grid size for kernel4
+        grid_size4 = CalculateGridSize(0.5, sm_count, max_thread_per_sm, block_size4.x);
+
+        // Calculate grid size for kernel5
+        grid_size5 = CalculateGridSize(0.25, sm_count, max_thread_per_sm, block_size5.x);
     }
 
     static constexpr std::size_t MegaBytes(std::size_t size)
@@ -45,12 +51,19 @@ public:
 
 
     dim3 grid_size1{6, 1, 1};
-    dim3 block_size1{1024, 1, 1};
-    size_t data_size1 = MegaBytes(256);
+    dim3 block_size1{512, 1, 1};
 
     dim3 grid_size2{2, 1, 1};
     dim3 block_size2{512, 1, 1};
-    size_t data_size2 = MegaBytes(256);
+
+    dim3 grid_size3{2, 1, 1};
+    dim3 block_size3{512, 1, 1};
+
+    dim3 grid_size4{4, 1, 1};
+    dim3 block_size4{1024, 1, 1};
+
+    dim3 grid_size5{2, 1, 1};
+    dim3 block_size5{256, 1, 1};
 
 private:
     // Calculates the grid size based on the given factor, SM count, maximum threads per SM, and block size.

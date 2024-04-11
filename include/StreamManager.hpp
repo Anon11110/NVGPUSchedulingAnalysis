@@ -37,6 +37,9 @@ public:
         if (stream_ != nullptr) {
             cudaStreamDestroy(stream_);
         }
+        if (stream_ != nullptr) {
+            cudaStreamDestroy(stream_);
+        }
     }
 
     // Adds a new kernel to the stream manager.
@@ -110,6 +113,11 @@ public:
     // Synchronizes the CUDA stream, blocking until all operations are complete.
     void Synchronize()
     {
+        if (stream_ == nullptr) {
+            cudaDeviceSynchronize();
+        } else {
+            cudaStreamSynchronize(stream_);
+        }
         if (stream_ == nullptr) {
             cudaDeviceSynchronize();
         } else {

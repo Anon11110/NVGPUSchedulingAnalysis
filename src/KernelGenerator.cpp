@@ -3,8 +3,9 @@
 
 KernelGenerator::KernelGenerator(int num_streams, int max_threads, int max_blocks, int max_shared_mem)
     : max_threads_(max_threads), max_blocks_(max_blocks), max_shared_mem_(max_shared_mem),
-    rng_(std::chrono::steady_clock::now().time_since_epoch().count())
+    rng_(std::random_device{}())
 {
+    stream_manager_.reserve(num_streams);
     for (int i = 0; i < num_streams; i++) {
         stream_manager_.emplace_back();
     }
@@ -12,14 +13,16 @@ KernelGenerator::KernelGenerator(int num_streams, int max_threads, int max_block
 
 
 template<typename T>
-T KernelGenerator::GetRandomNumber(T min, T max)
+std::enable_if_t<std::is_integral_v<T>, T> KernelGenerator::GetRandomNumber(T min, T max)
 {
     std::uniform_int_distribution<T> dist(min, max);
     return dist(rng_);
 }
 
-void KernelGenerator::GenerateAndLaunchKernels(int num_kernels, const std::vector<KernelSetting>& settings)
+template<typename... Args>
+void KernelGenerator::GenerateAndLaunchKernels(int num_kernels, Args&&... args)
 {
+    auto settings = std::vector<KernelSetting>{std::forward<Args>(args)...};
     for (int i = 0; i < num_kernels; i++) {
         int stream_index = i % stream_manager_.size();
         KernelSetting setting = i < settings.size() ? settings[i] : KernelSetting();
@@ -29,25 +32,29 @@ void KernelGenerator::GenerateAndLaunchKernels(int num_kernels, const std::vecto
         int shared_mem_size = setting.shared_mem_size.value_or(GetRandomNumber(0, max_shared_mem_));
 
         // Allocate memory for kernel parameters
-        int* d_smids, *d_block_ids, *d_thread_ids, *d_block_dims, *d_thread_dims, *d_shared_mem_sizes;
-        float* d_kernel_durations;
-        cudaMalloc(&d_smids, blocks * sizeof(int));
-        cudaMalloc(&d_block_ids, blocks * sizeof(int));
-        cudaMalloc(&d_thread_ids, blocks * thread_per_block * sizeof(int));
-        cudaMalloc(&d_block_dims, blocks * sizeof(int));
-        cudaMalloc(&d_thread_dims, blocks * thread_per_block * sizeof(int));
-        cudaMalloc(&d_shared_mem_sizes, blocks * sizeof(int));
-        cudaMalloc(&d_kernel_durations, blocks * sizeof(float));
+        auto d_smids = std::make_unique<int[]>(blocks);
+        auto d_block_ids = std::make_unique<int[]>(blocks);
+        auto d_thread_ids = std::make_unique<int[]>(blocks * thread_per_block);
+        auto d_block_dims = std::make_unique<int[]>(blocks);
+        auto d_thread_dims = std::make_unique<int[]>(blocks * thread_per_block);
+        auto d_shared_mem_sizes = std::make_unique<int[]>(blocks);
+        auto d_kernel_durations = std::make_unique<float[]>(blocks);
 
-        std::vector<float> kernel_durations(blocks, config.kernelDuration.value_or(0.1f));
-        cudaMemcpy(d_kernel_durations, kernel_durations.data(), blocks * sizeof(float), cudaMemcpyHostToDevice);
+        auto kernel_durations = std::vector<float>(blocks, setting.execution_time.value_or(0.1f));
+        cudaMemcpy(d_kernel_durations.get(), kernel_durations.data(), blocks * sizeof(float), cudaMemcpyHostToDevice);
 
-        auto kernelFunction = [d_smids, d_block_ids, d_thread_ids, d_block_dims, d_thread_dims, d_shared_mem_sizes, d_kernel_durations](cudaStream_t stream) {
-            TestKernel<<<blocks, thread_per_block, shared_mem_size, stream>>>(d_smids, d_block_ids, d_thread_ids, d_block_dims, d_thread_dims, d_shared_mem_sizes, d_kernel_durations, 900);
+        auto kernelFunction = [d_smids = std::move(d_smids), d_block_ids = std::move(d_block_ids),
+                               d_thread_ids = std::move(d_thread_ids), d_block_dims = std::move(d_block_dims),
+                               d_thread_dims = std::move(d_thread_dims), d_shared_mem_sizes = std::move(d_shared_mem_sizes),
+                               d_kernel_durations = std::move(d_kernel_durations), blocks, thread_per_block, shared_mem_size](cudaStream_t stream) {
+            TestKernel<<<blocks, thread_per_block, shared_mem_size, stream>>>(d_smids.get(), d_block_ids.get(), d_thread_ids.get(),
+                                                                             d_block_dims.get(), d_thread_dims.get(), d_shared_mem_sizes.get(),
+                                                                             d_kernel_durations.get(), 900);
         };
 
-        streamManagers_[streamIndex].AddKernel("TestKernel" + std::to_string(i), dim3(blocks), dim3(threadsPerBlock), sharedMemSize, kernelFunction);
-        streamManagers_[streamIndex].ScheduleKernelExecution("TestKernel" + std::to_string(i));
+        stream_manager_[stream_index].AddKernel("TestKernel" + std::to_string(i), dim3(blocks), dim3(thread_per_block),
+                                                shared_mem_size, std::move(kernelFunction));
+        stream_manager_[stream_index].ScheduleKernelExecution("TestKernel" + std::to_string(i));
     }
 }
 

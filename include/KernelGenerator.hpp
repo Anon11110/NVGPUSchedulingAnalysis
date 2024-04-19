@@ -4,6 +4,8 @@
 #include <random>
 #include <vector>
 #include <optional>
+#include <type_traits>
+#include <memory>
 #include "StreamManager.hpp"
 #include "KernelSetting.hpp"
 
@@ -19,7 +21,10 @@ struct KernelSetting {
 class KernelGenerator {
 public:
     KernelGenerator(int num_streams, int max_threads, int max_blocks, int max_shared_mem);
-    void GenerateAndLaunchKernels(int num_kernels, const std::vector<KernelSetting>& settings);
+
+    template<typename... Args>
+    void GenerateAndLaunchKernels(int num_kernels, Args&&... args);
+
     static __global__ void TestKernel(int *smids, int *block_ids, int *thread_ids, int *block_dims, int *thread_dims,
                            int *shared_mem_sizes, float *kernel_durations, clock_t clock_rate);
 
@@ -31,7 +36,7 @@ private:
     std::mt19937 rng_;
 
     template<typename T>
-    T GetRandomNumber(T min, T max);
+    std::enable_if_t<std::is_integral_v<T>, T> GetRandomNumber(T min, T max);
 };
 
 #endif // KERNEL_GENERATOR_HPP

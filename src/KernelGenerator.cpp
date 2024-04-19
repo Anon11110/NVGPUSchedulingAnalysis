@@ -59,7 +59,8 @@ void KernelGenerator::GenerateAndLaunchKernels(int num_kernels, Args&&... args)
 }
 
 __global__ void KernelGenerator::TestKernel(int *smids, int *block_ids, int *thread_ids, int *block_dims, int *thread_dims,
-                           int *shared_mem_sizes, float *kernel_durations, clock_t clock_rate) {
+                           int *shared_mem_sizes, float *kernel_durations, clock_t clock_rate)
+{
     // Get the block ID and thread ID
     int block_id = blockIdx.x;
     int thread_id = threadIdx.x;

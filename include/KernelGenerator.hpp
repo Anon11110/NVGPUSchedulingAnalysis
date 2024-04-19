@@ -7,7 +7,6 @@
 #include <type_traits>
 #include <memory>
 #include "StreamManager.hpp"
-#include "KernelSetting.hpp"
 
 struct KernelSetting {
     std::optional<int> threads_per_block; // Optional number of threads per block

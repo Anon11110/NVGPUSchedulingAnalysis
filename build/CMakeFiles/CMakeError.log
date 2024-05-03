@@ -1,0 +1,430 @@
+Detecting CUDA compiler ABI info failed to compile with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-lq9i07
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_c5a23 && [1/2] Building CUDA object CMakeFiles\cmTC_c5a23.dir\CMakeCUDACompilerABI.cu.obj
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+tmpxft_0000663c_00000000-10_CMakeCUDACompilerABI.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_c5a23.exe
+FAILED: cmTC_c5a23.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_c5a23.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_c5a23.dir\CMakeCUDACompilerABI.cu.obj  /out:cmTC_c5a23.exe /implib:cmTC_c5a23.lib /pdb:cmTC_c5a23.pdb /version:0.0 -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_c5a23.dir/manifest.res CMakeFiles\cmTC_c5a23.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CUDA compiler works failed with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-769hbb
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_f0857 && [1/2] Building CUDA object CMakeFiles\cmTC_f0857.dir\main.cu.obj
+main.cu
+tmpxft_00004830_00000001-10_main.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_f0857.exe
+FAILED: cmTC_f0857.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_f0857.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_f0857.dir\main.cu.obj  /out:cmTC_f0857.exe /implib:cmTC_f0857.lib /pdb:cmTC_f0857.pdb /version:0.0 /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_f0857.dir/manifest.res CMakeFiles\cmTC_f0857.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CUDA compiler ABI info failed to compile with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-e91yye
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_4383e && [1/2] Building CUDA object CMakeFiles\cmTC_4383e.dir\CMakeCUDACompilerABI.cu.obj
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+tmpxft_00004a30_00000000-10_CMakeCUDACompilerABI.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_4383e.exe
+FAILED: cmTC_4383e.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_4383e.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_4383e.dir\CMakeCUDACompilerABI.cu.obj  /out:cmTC_4383e.exe /implib:cmTC_4383e.lib /pdb:cmTC_4383e.pdb /version:0.0 -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_4383e.dir/manifest.res CMakeFiles\cmTC_4383e.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CUDA compiler works failed with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-acipt6
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_b2b80 && [1/2] Building CUDA object CMakeFiles\cmTC_b2b80.dir\main.cu.obj
+main.cu
+tmpxft_000094a8_00000000-10_main.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_b2b80.exe
+FAILED: cmTC_b2b80.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_b2b80.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_b2b80.dir\main.cu.obj  /out:cmTC_b2b80.exe /implib:cmTC_b2b80.lib /pdb:cmTC_b2b80.pdb /version:0.0 /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_b2b80.dir/manifest.res CMakeFiles\cmTC_b2b80.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CUDA compiler ABI info failed to compile with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-b5kouf
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_58c20 && [1/2] Building CUDA object CMakeFiles\cmTC_58c20.dir\CMakeCUDACompilerABI.cu.obj
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+tmpxft_000025c0_00000000-10_CMakeCUDACompilerABI.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_58c20.exe
+FAILED: cmTC_58c20.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_58c20.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_58c20.dir\CMakeCUDACompilerABI.cu.obj  /out:cmTC_58c20.exe /implib:cmTC_58c20.lib /pdb:cmTC_58c20.pdb /version:0.0 -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_58c20.dir/manifest.res CMakeFiles\cmTC_58c20.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CUDA compiler works failed with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-jgbeuc
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_4f544 && [1/2] Building CUDA object CMakeFiles\cmTC_4f544.dir\main.cu.obj
+main.cu
+tmpxft_0000c71c_00000000-10_main.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_4f544.exe
+FAILED: cmTC_4f544.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_4f544.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_4f544.dir\main.cu.obj  /out:cmTC_4f544.exe /implib:cmTC_4f544.lib /pdb:cmTC_4f544.pdb /version:0.0 /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_4f544.dir/manifest.res CMakeFiles\cmTC_4f544.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CUDA compiler ABI info failed to compile with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-454hen
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_615cd && [1/2] Building CUDA object CMakeFiles\cmTC_615cd.dir\CMakeCUDACompilerABI.cu.obj
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+tmpxft_000026a4_00000000-10_CMakeCUDACompilerABI.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_615cd.exe
+FAILED: cmTC_615cd.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_615cd.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_615cd.dir\CMakeCUDACompilerABI.cu.obj  /out:cmTC_615cd.exe /implib:cmTC_615cd.lib /pdb:cmTC_615cd.pdb /version:0.0 -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_615cd.dir/manifest.res CMakeFiles\cmTC_615cd.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CUDA compiler works failed with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-99n14v
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_bced7 && [1/2] Building CUDA object CMakeFiles\cmTC_bced7.dir\main.cu.obj
+main.cu
+tmpxft_00008d60_00000000-10_main.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_bced7.exe
+FAILED: cmTC_bced7.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_bced7.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_bced7.dir\main.cu.obj  /out:cmTC_bced7.exe /implib:cmTC_bced7.lib /pdb:cmTC_bced7.pdb /version:0.0 /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_bced7.dir/manifest.res CMakeFiles\cmTC_bced7.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+Detecting CUDA compiler ABI info failed to compile with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-1qru4q
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_ef056 && [1/2] Building CUDA object CMakeFiles\cmTC_ef056.dir\CMakeCUDACompilerABI.cu.obj
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+CMakeCUDACompilerABI.cu
+CMakeCUDACompilerABI.cu
+cl: 命令行 warning D9002 :忽略未知选项“-v”
+tmpxft_000049b8_00000000-10_CMakeCUDACompilerABI.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_ef056.exe
+FAILED: cmTC_ef056.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_ef056.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_ef056.dir\CMakeCUDACompilerABI.cu.obj  /out:cmTC_ef056.exe /implib:cmTC_ef056.lib /pdb:cmTC_ef056.pdb /version:0.0 -v /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_ef056.dir/manifest.res CMakeFiles\cmTC_ef056.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
+
+Determining if the CUDA compiler works failed with the following output:
+Change Dir: D:/Source/Repos/CppProjects/NVGPUSchedulingAnalysis/build/CMakeFiles/CMakeScratch/TryCompile-3xkd5a
+
+Run Build Command(s):D:/mingw64/bin/ninja.exe cmTC_94e8f && [1/2] Building CUDA object CMakeFiles\cmTC_94e8f.dir\main.cu.obj
+main.cu
+tmpxft_00000774_00000000-10_main.cudafe1.cpp
+[2/2] Linking CUDA executable cmTC_94e8f.exe
+FAILED: cmTC_94e8f.exe 
+cmd.exe /C "cd . && "D:\Program Files\CMake\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\cmTC_94e8f.dir --rc=C:\msys64\ucrt64\bin\windres.exe --mt="" --manifests  -- C:\msys64\ucrt64\bin\ld.exe /nologo CMakeFiles\cmTC_94e8f.dir\main.cu.obj  /out:cmTC_94e8f.exe /implib:cmTC_94e8f.lib /pdb:cmTC_94e8f.pdb /version:0.0 /debug /INCREMENTAL  cudadevrt.lib  cudart_static.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib -LIBPATH:"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.2/lib/x64"  && cd ."
+RC Pass 1: command "C:\msys64\ucrt64\bin\windres.exe /fo CMakeFiles\cmTC_94e8f.dir/manifest.res CMakeFiles\cmTC_94e8f.dir/manifest.rc" failed (exit code 1) with the following output:
+Usage: C:\msys64\ucrt64\bin\windres.exe [option(s)] [input-file] [output-file]
+ The options are:
+  -i --input=<file>            Name input file
+  -o --output=<file>           Name output file
+  -J --input-format=<format>   Specify input format
+  -O --output-format=<format>  Specify output format
+  -F --target=<target>         Specify COFF target
+     --preprocessor=<program>  Program to use to preprocess rc file
+     --preprocessor-arg=<arg>  Additional preprocessor argument
+  -I --include-dir=<dir>       Include directory when preprocessing rc file
+  -D --define <sym>[=<val>]    Define SYM when preprocessing rc file
+  -U --undefine <sym>          Undefine SYM when preprocessing rc file
+  -v --verbose                 Verbose - tells you what it's doing
+  -c --codepage=<codepage>     Specify default codepage
+  -l --language=<val>          Set language when reading rc file
+     --use-temp-file           Use a temporary file instead of popen to read
+                               the preprocessor output
+     --no-use-temp-file        Use popen (default)
+  -r                           Ignored for compatibility with rc
+  @<file>                      Read options from <file>
+  -h --help                    Print this help message
+  -V --version                 Print version information
+FORMAT is one of rc, res, or coff, and is deduced from the file name
+extension if not specified.  A single file name is an input file.
+No input-file is stdin, default rc.  No output-file is stdout, default rc.
+C:\msys64\ucrt64\bin\windres.exe: supported targets: pe-x86-64 pei-x86-64 pe-bigobj-x86-64 elf64-x86-64 pe-i386 pei-i386 elf32-i386 elf32-iamcu pdb elf64-little elf64-big elf32-little elf32-big srec symbolsrec verilog tekhex binary ihex plugin
+ninja: build stopped: subcommand failed.
+
+
+
